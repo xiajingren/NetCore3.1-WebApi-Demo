@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Test\\myapi\\myapi\\NetCore3.1-WebApi-Demo.csproj": {}
+    "D:\\Test\\myapi\\NetCore3.1-WebApi-Demo\\NetCore3.1-WebApi-Demo.csproj": {}
   },
   "projects": {
-    "D:\\Test\\myapi\\myapi\\NetCore3.1-WebApi-Demo.csproj": {
+    "D:\\Test\\myapi\\NetCore3.1-WebApi-Demo\\NetCore3.1-WebApi-Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\myapi\\myapi\\NetCore3.1-WebApi-Demo.csproj",
+        "projectUniqueName": "D:\\Test\\myapi\\NetCore3.1-WebApi-Demo\\NetCore3.1-WebApi-Demo.csproj",
         "projectName": "NetCore3.1-WebApi-Demo",
-        "projectPath": "D:\\Test\\myapi\\myapi\\NetCore3.1-WebApi-Demo.csproj",
+        "projectPath": "D:\\Test\\myapi\\NetCore3.1-WebApi-Demo\\NetCore3.1-WebApi-Demo.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\myapi\\myapi\\obj\\",
+        "outputPath": "D:\\Test\\myapi\\NetCore3.1-WebApi-Demo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
