@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApiDemo.Services
 {
@@ -15,34 +16,30 @@ namespace WebApiDemo.Services
             this.context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<User> AddUser(string username, string password)
+        public async Task<User> AddUserAsync(string username, string password)
         {
-            await Task.CompletedTask;
             User user = new User();
             user.ID = Guid.NewGuid();
             user.UserName = username;
             user.Password = password;
-            context.Users.Add(user);
+            await context.Users.AddAsync(user);
             context.SaveChanges();
             return user;
         }
 
-        public async Task<User> GetUser(string username, string password)
+        public async Task<User> GetUserAsync(string username, string password)
         {
-            await Task.CompletedTask;
-            return context.Users.FirstOrDefault(p => p.UserName == username && p.Password == password);
+            return await context.Users.FirstOrDefaultAsync(p => p.UserName == username && p.Password == password);
         }
 
-        public async Task<IEnumerable<User>> GetUser()
+        public async Task<IEnumerable<User>> GetUserAsync()
         {
-            await Task.CompletedTask;
-            return context.Users.ToList();
+            return await context.Users.ToListAsync();
         }
 
-        public async Task<User> GetUser(Guid id)
+        public async Task<User> GetUserAsync(Guid id)
         {
-            await Task.CompletedTask;
-            return context.Users.FirstOrDefault(p => p.ID == id);
+            return await context.Users.FirstOrDefaultAsync(p => p.ID == id);
         }
 
     }

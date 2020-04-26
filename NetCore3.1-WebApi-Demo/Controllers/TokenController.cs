@@ -34,7 +34,7 @@ namespace WebApiDemo.Controllers
         [HttpPost(Name = nameof(Login))]
         public async Task<ActionResult<BaseDto<object>>> Login([FromBody]LoginParameter loginParameter)
         {
-            var user = await userService.GetUser(loginParameter.UserName, loginParameter.Password);
+            var user = await userService.GetUserAsync(loginParameter.UserName, loginParameter.Password);
             if (user != null)
             {
                 var token = AppHelper.Instance.GetToken(user);

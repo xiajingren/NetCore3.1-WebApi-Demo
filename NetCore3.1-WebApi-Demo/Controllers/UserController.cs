@@ -39,7 +39,7 @@ namespace WebApiDemo.Controllers
         [HttpGet]
         public async Task<ActionResult<BaseDto<IEnumerable<User>>>> Get()
         {
-            var users = await userService.GetUser();
+            var users = await userService.GetUserAsync();
             BaseDto<IEnumerable<User>> dto = new BaseDto<IEnumerable<User>>(Dto.StatusCode.Success, "", users);
             return Ok(dto);
         }
@@ -53,7 +53,7 @@ namespace WebApiDemo.Controllers
         public async Task<ActionResult<BaseDto<User>>> UserInfo()
         {
             string id = User.FindFirst("id")?.Value;
-            var user = await userService.GetUser(Guid.Parse(id));
+            var user = await userService.GetUserAsync(Guid.Parse(id));
             BaseDto<User> dto = new BaseDto<User>(Dto.StatusCode.Success, "", user);
             return Ok(dto);
         }
@@ -67,7 +67,7 @@ namespace WebApiDemo.Controllers
         [HttpGet]
         public async Task<ActionResult<BaseDto<User>>> Get(Guid id)
         {
-            var user = await userService.GetUser(id);
+            var user = await userService.GetUserAsync(id);
             BaseDto<User> dto = new BaseDto<User>(Dto.StatusCode.Success, "", user);
             return Ok(dto);
         }
@@ -80,7 +80,7 @@ namespace WebApiDemo.Controllers
         [HttpPost]
         public async Task<ActionResult<BaseDto<User>>> Add(LoginParameter loginParameter)
         {
-            var user = await userService.AddUser(loginParameter.UserName, loginParameter.Password);
+            var user = await userService.AddUserAsync(loginParameter.UserName, loginParameter.Password);
             BaseDto<User> dto = new BaseDto<User>(Dto.StatusCode.Success, "", user);
             return Ok(dto);
         }

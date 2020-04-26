@@ -8,12 +8,12 @@ namespace WebApiDemo.Services
 {
     public interface IUserService
     {
-        Task<IEnumerable<User>> GetUser();
+        Task<IEnumerable<User>> GetUserAsync();
 
-        Task<User> GetUser(Guid id);
+        Task<User> GetUserAsync(Guid id);
 
-        Task<User> GetUser(string username, string password);
+        Task<User> GetUserAsync(string username, string password);
 
-        Task<User> AddUser(string username, string password);
+        Task<User> AddUserAsync(string username, string password);
     }
 }
