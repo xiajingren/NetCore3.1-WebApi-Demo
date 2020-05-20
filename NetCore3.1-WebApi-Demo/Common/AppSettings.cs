@@ -10,6 +10,10 @@ namespace WebApiDemo.Common
     {
         public static JwtSetting JwtSetting { get; set; }
 
+        /// <summary>
+        /// 初始化jwt配置
+        /// </summary>
+        /// <param name="configuration"></param>
         public static void Init(IConfiguration configuration)
         {
             JwtSetting = new JwtSetting();

@@ -14,11 +14,13 @@ namespace WebApiDemo.Common
     {
         public readonly static AppHelper Instance = new AppHelper();
 
-        private AppHelper()
-        {
+        private AppHelper() { }
 
-        }
-
+        /// <summary>
+        /// 生成token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public string GetToken(User user)
         {
             //创建用户身份标识，可按需要添加更多信息
@@ -27,7 +29,6 @@ namespace WebApiDemo.Common
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim("id", user.ID.ToString(), ClaimValueTypes.Integer32), // 用户id
                 new Claim("name", user.UserName), // 用户名
-                //new Claim("admin", user.IsAdmin.ToString(),ClaimValueTypes.Boolean) // 是否是管理员
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSettings.JwtSetting.SecurityKey));

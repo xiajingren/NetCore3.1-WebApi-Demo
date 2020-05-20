@@ -1,5 +1,8 @@
 ﻿namespace WebApiDemo.Common
 {
+    /// <summary>
+    /// jwt配置对象
+    /// </summary>
     public class JwtSetting
     {
         public string SecurityKey { get; set; }
